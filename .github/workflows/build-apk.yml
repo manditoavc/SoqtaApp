@@ -16,18 +16,25 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install expo, eas-cli and project deps
+        run: |
+          npm install -g expo-cli
+          npm install
+
+      - name: Prebuild Android project
+        run: |
+          npx expo prebuild --platform android --clean
+
+      - name: Give gradlew execution permissions
+        run: chmod +x android/gradlew
 
       - name: Build debug APK
         run: |
-          npx expo install
-          npx expo prebuild --platform android
           cd android
           ./gradlew assembleDebug
 
-      - name: Upload APK
+      - name: Upload APK artifact
         uses: actions/upload-artifact@v3
         with:
-          name: app-debug
+          name: SoqtaApp-debug-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
