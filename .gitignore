@@ -1,0 +1,25 @@
+# --- EXPO / REACT NATIVE ---
+node_modules/
+.expo/
+.expo-shared/
+dist/
+web-build/
+build/
+android/
+ios/
+
+# --- SYSTEM FILES ---
+.DS_Store
+Thumbs.db
+
+# --- LOGS ---
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+expo-env.d.ts
+
+# --- ENV ---
+.env
+.env.local
+.env.production
+.env.development

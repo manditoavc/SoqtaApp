@@ -1,0 +1,94 @@
+{
+  "expo": {
+    "name": "Hamburguesas SOQTA",
+    "slug": "app-interna-ventas-hamburguesas-restaurante",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+
+    "newArchEnabled": false,
+    "jsEngine": "jsc",
+
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.manditoavc.soqtaapp",
+      "infoPlist": {
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Allow $(PRODUCT_NAME) to use your location.",
+        "NSLocationAlwaysUsageDescription": "Allow $(PRODUCT_NAME) to use your location.",
+        "NSLocationWhenInUseUsageDescription": "Allow $(PRODUCT_NAME) to use your location.",
+        "UIBackgroundModes": ["location", "audio"],
+        "NSMicrophoneUsageDescription": "Allow $(PRODUCT_NAME) to access your microphone"
+      }
+    },
+
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.manditoavc.appinternaventashamburguesasrestaurante",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "INTERNET",
+        "RECORD_AUDIO",
+        "MODIFY_AUDIO_SETTINGS"
+      ]
+    },
+
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "isAndroidForegroundServiceEnabled": true,
+          "isAndroidBackgroundLocationEnabled": true,
+          "isIosBackgroundLocationEnabled": true,
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
+        }
+      ],
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "kotlinVersion": "2.0.21",
+            "newArchEnabled": false,
+            "reactNativeArchitectures": null,
+            "enableProguardInReleaseBuilds": false,
+            "extraProguardRules": "",
+            "packagingOptions": {
+              "exclude": ["META-INF/LICENSE*", "META-INF/NOTICE*"]
+            }
+          }
+        }
+      ]
+    ],
+
+    "experiments": {
+      "typedRoutes": true
+    },
+
+    "extra": {
+      "eas": {
+        "projectId": "586c0fcc-bacc-46df-b298-8ec56f3dd913"
+      }
+    }
+  }
+}
